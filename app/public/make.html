@@ -67,8 +67,6 @@
         email: $("#email").val().trim(),
         uniqueId: $("#unique-id").val().trim()
       };
-      console.log(newReservation);
-
       // Question: What does this code do??
       $.post("/api/make", newReservation)
       .done(function(data) {
