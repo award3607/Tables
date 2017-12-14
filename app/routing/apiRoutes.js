@@ -61,6 +61,12 @@ app.post("/api/make", function(req, res) {
   res.json(newReservation);
 });
 
+app.post("/api/clear", function(req, res) {
+  tables = [];
+  waitListArray = [];
+  console.log("Cleared tables and waitlist");
+});
+
 app.listen(PORT, function() {
   	console.log("App listening on PORT " + PORT);
 });
