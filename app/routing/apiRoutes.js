@@ -4,11 +4,12 @@ var bodyParser = require("body-parser");
 var fs = require("fs");
 var app = express();
 var PORT = 3000;
-var htmlRoutes = require("/htmlRoutes.js");
+var htmlRoutes = require("./htmlRoutes.js");
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(htmlRoutes);
 
 app.post("/api/make", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
