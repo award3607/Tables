@@ -1,18 +1,22 @@
 var path = require("path");
 var express = require("express");
-var app = express();
+var router = express.Router();
 
-module.exports.routing = function(){
 
-	app.get('/', function(req, res){
-		res.sendFile(path.join(__dirname, '../public/home.html'));
-	})
 
-	app.get('/view', function(req, res){
-		res.sendFile(path.join(__dirname, '../public/view.html'));
-	})
-	app.get('/make', function(req, res){
-		res.sendFile(path.join(__dirname, '../public/make.html'));
-	})
+router.get('/', function(req, res){
+	console.log("root");
+	res.sendFile(path.join(__dirname, '../public/home.html'));
+});
 
-};
+router.get('/view', function(req, res){
+	console.log("view");
+	res.sendFile(path.join(__dirname, '../public/view.html'));
+});
+
+router.get('/make', function(req, res){
+	console.log("make");
+	res.sendFile(path.join(__dirname, '../public/make.html'));
+});
+
+module.exports = router;

@@ -9,6 +9,7 @@ var htmlRoutes = require("./htmlRoutes.js");
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(htmlRoutes);
 
 var tables = [
   {
