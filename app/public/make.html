@@ -54,7 +54,7 @@
 			
 		</div>
 		<p>
-			<a id="api-tables" href="/api/tables">API Table Link</a> | <a id="api-wait-list" href="/api/wait">API Wait List</a>
+			<a id="api-tables" href="/api/tables">API Table Link</a> | <a id="api-wait-list" href="/api/waitlist">API Wait List</a>
 		</p>
 	</div>
 
@@ -67,6 +67,7 @@
         email: $("#email").val().trim(),
         uniqueId: $("#unique-id").val().trim()
       };
+      console.log(newReservation);
 
       // Question: What does this code do??
       $.post("/api/make", newReservation)
