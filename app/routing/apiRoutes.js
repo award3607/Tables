@@ -20,6 +20,15 @@ var tables = [
   }
 ];
 
+var waitListArray = [
+  {
+    name: "andrew",
+    phone: "5555550000",
+    email: "temp@example.com",
+    uniqueId: "42a"
+  }
+];
+
 
 app.get("/api/tables", function(req, res) {
   res.json(tables);
@@ -33,7 +42,7 @@ app.post("/api/make", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body-parser middleware
   var newReservation = req.body;
-  var waitListArray = [];
+  
   if(tables.length<5){
   	tables.push(newReservation);
   	fs.writeFile('../data/apiTabledata.js', JSON.stringify(newReservation), 'utf-8', function(err) {
