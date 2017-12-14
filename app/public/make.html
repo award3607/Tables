@@ -54,9 +54,28 @@
 			
 		</div>
 		<p>
-			<a id="api-tables" href="">API Table Link</a> | <a id="api-wait-list" href="">API Wait List</a>
+			<a id="api-tables" href="/api/tables">API Table Link</a> | <a id="api-wait-list" href="/api/wait">API Wait List</a>
 		</p>
 	</div>
+
+	<script type="text/javascript">
+    $("#reservation-btn").on("click", function(event) {
+      event.preventDefault();
+      var newReservation = {
+        name: $("#name").val().trim(),
+        phone: $("#phone").val().trim(),
+        email: $("#email").val().trim(),
+        uniqueId: $("#unique-id").val().trim()
+      };
+
+      // Question: What does this code do??
+      $.post("/api/make", newReservation)
+      .done(function(data) {
+        console.log(data);
+        alert("Making a reservation...");
+      });
+    });
+  </script>
 
 </body>
 </html>
